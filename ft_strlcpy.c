@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/03 18:12:22 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/04 10:51:23 by lannur-s         ###   ########.fr       */
+/*   Created: 2023/05/04 13:12:03 by lannur-s          #+#    #+#             */
+/*   Updated: 2023/05/04 18:04:47 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	unsigned int		i;
+	size_t		len;
+	size_t		i;
 
 	i = 0;
-	while (s[i] != '\0')
+	len = ft_strlen(src);
+	if (size == 0)
+		return (len);
+	while (i < size - 1 && src[i] != '\0')
 	{
+		dst[i] = src[i];
 		i++;
 	}
-	return (i);
+	dst[i] = '\0';
+	return (len);
 }
