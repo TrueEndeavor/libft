@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 12:46:47 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/04 17:18:07 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/05 15:36:37 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,18 @@ int			ft_toupper(int c);
 
 size_t		ft_strlen(const char *s);
 
+void		*ft_memcpy(void *dest, const void *src, size_t n);
+
+size_t		ft_strlcpy(char *dst, const char *src, size_t size);
+
+void		*ft_memset(void *s, int c, size_t n);
+
 void		ft_bzero(void *s, size_t n);
 
 void		*ft_memset(void *s, int c, size_t n);
 
 void		*ft_memmove(void *dest, const void *src, size_t n);
 
-void		*ft_memcpy(void *dest, const void *src, size_t n);
-
-size_t		ft_strlcpy(char *dst, const char *src, size_t size);
 
 void		*ft_memchr(const void *s, int c, size_t n);
 

@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 18:11:49 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/03 18:14:21 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/05 09:56:04 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,9 @@
 
 void ft_bzero(void *s, size_t n)
 {
-	
+	unsigned char	*src;
+
+	src = (unsigned char *) s;
+	while (n--)
+		*src++ = 0;
 }
