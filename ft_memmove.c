@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 18:12:13 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/05 17:21:53 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/08 10:27:28 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,19 +65,3 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	return (dest);
 }
-/*
-int main() 
-{
-char s[] = {65, 66, 67, 68, 69, 70, 71};
-	char s0[] = { 0,  0,  0,  0,  0,  0, 0};
-	char sCpy[] = {97, 0, 99, 100, 101, 102, 103};
-	char sResult[] = {67, 68, 67, 68, 69, 0, 45};
-	char sResult2[] = {67, 67, 68, 68, 69, 0, 45};
-
-	ft_memmove(s0, s, 7);
-printf("\n\n%s\n", s0);	
-printf("\n\n%ld\n", strlen(s0));	
-
-   return 0;
-}
-*/

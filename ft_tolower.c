@@ -6,15 +6,18 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 11:11:15 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/03 16:27:14 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/08 10:58:20 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+static int ft_isupper(int c)
+{
+	return ((c >= 'A' && c <= 'Z') || 0);
+}
+
 int	ft_tolower(int c)
 {
-	if ((c >= 'A' && c <= 'Z'))
-	{
-		return (c + 32);
-	}
+	if (ft_isupper(c))
+		c = c + 32;
 	return (c);
 }

@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/03 18:11:49 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/08 13:06:07 by lannur-s         ###   ########.fr       */
+/*   Created: 2023/05/08 10:29:24 by lannur-s          #+#    #+#             */
+/*   Updated: 2023/05/08 15:08:36 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	unsigned char	*src;
+	size_t	len_d;
+	size_t	len_s;
+	char	*dst_end;	
+	char	*dst_move;
 
-	src = (unsigned char *) s;
+	len_d = ft_strlen(dst);
+	len_s = ft_strlen(src);
+	dst_end = dst + len_d;
+	dst_move = dst_end;
 	if (!src)
 		return (0);	
-	while (n--)
-		*src++ = 0;
+	if (size == 0 || size <= len_d)
+		return (size + len_s);
+	while ((dst_move - dst_end) < size - 1 && *src)
+		*dst_move++ = *src;
+	*dst_move = 0;
+	return (len_d + len_s);
 }

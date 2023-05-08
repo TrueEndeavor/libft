@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 13:12:03 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/04 18:04:47 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/08 14:37:36 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,20 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t		len;
-	size_t		i;
+	size_t	len;
+	char	*dst_start;
 
-	i = 0;
+	dst_start = dst;
+	if (!src)
+		return (0);
 	len = ft_strlen(src);
-	if (size == 0)
-		return (len);
-	while (i < size - 1 && src[i] != '\0')
+	if (size > 0)
 	{
-		dst[i] = src[i];
-		i++;
+		while ((dst - dst_start) < size - 1 && *src)
+		{
+			*dst++ = *src++;
+		}
+		*dst = '\0';
 	}
-	dst[i] = '\0';
 	return (len);
 }
