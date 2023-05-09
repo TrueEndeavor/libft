@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 12:23:01 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/09 13:29:14 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/09 16:13:51 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,24 +28,4 @@ char	*ft_strnstr(const char *big, const char	*little, size_t len)
 		--len;
 	}
 	return (0);
-}
-
-int main()
-{
-    // Take any two strings
-    char s1[] = "GeeksforGeeks";
-    char s2[] = "for";
-    char* p;
- 
-    // Find first occurrence of s2 in s1
-    p = ft_strnstr(s1, s2, 9);
- 
-    // Prints the result
-    if (p) {
-        printf("String found\n");
-        printf("First occurrence of string '%s' in '%s' is '%s'", s2, s1, p);
-    } else
-        printf("String not found\n");
- 
-    return 0;
 }

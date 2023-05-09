@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 13:30:34 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/09 14:04:06 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/09 17:06:28 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <string.h>
 #include <ctype.h>
 
-int	ft_isspace(int c)
+static int	ft_isspace(int c)
 {
 	return (c == ' ' || c == '\f' || c == '\t' || c == '\n' || c == '\r'
 		|| c == '\v');
@@ -40,19 +40,4 @@ int	ft_atoi(const char *str)
 		str++;
 	}
 	return (res * sign);
-}
-
-int main () {
-   int val;
-   char str[20];
-   
-   strcpy(str, "--98993489");
-   val = atoi(str);
-   printf("String value = %s, Int value = %d\n", str, val);
-
-   strcpy(str, "tutorialspoint.com");
-   val = ft_atoi(str);
-   printf("String value = %s, Int value = %d\n", str, val);
-
-   return(0);
 }

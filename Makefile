@@ -6,7 +6,7 @@
 #    By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 12:46:34 by lannur-s          #+#    #+#              #
-#    Updated: 2023/05/05 15:37:14 by lannur-s         ###   ########.fr        #
+#    Updated: 2023/05/09 17:06:16 by lannur-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,13 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar
 ARFLAGS = rcs
-SRCS = ft_isalpha.c ft_isdigit.c ft_isascii.c ft_isprint.c \
-       ft_isalnum.c ft_tolower.c ft_toupper.c ft_strlen.c \
-	   ft_memcpy.c ft_strlcpy.c ft_memset.c ft_bzero.c ft_memmove.c
+SRCS = ft_isascii.c ft_isprint.c ft_isalpha.c ft_isdigit.c \
+       ft_isalnum.c ft_tolower.c ft_toupper.c \
+	   ft_strlen.c ft_strchr.c ft_strrchr.c ft_strncmp.c \
+	   ft_memcmp.c ft_memchr.c ft_strnstr.c \
+	   ft_memcpy.c ft_memmove.c ft_memset.c ft_bzero.c \
+	   ft_strlcpy.c ft_strlcat.c ft_atoi.c ft_calloc.c \
+	   ft_strdup.c
 OBJS = $(SRCS:%.c=%.o)
 
 all: $(NAME)

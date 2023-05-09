@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 11:07:31 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/09 12:47:31 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/09 17:45:42 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,15 @@ char	*ft_strchr(const char *str, int c)
 		return (0);
 	while (*str != '\0')
 	{
-		if (*str == c)
+		if (*str == (unsigned char)c)
 		{
-			return ((char*)str);
+			return ((char *) str);
 		}
 		str++;
 	}
-	return (0);
+	if (c == '\0')
+	{
+		return ((char *)str);
+	}	
+	return (NULL);
 }
