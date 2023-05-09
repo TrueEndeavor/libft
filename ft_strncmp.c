@@ -1,43 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/03 18:11:56 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/09 11:06:06 by lannur-s         ###   ########.fr       */
+/*   Created: 2023/05/09 12:21:57 by lannur-s          #+#    #+#             */
+/*   Updated: 2023/05/09 12:47:54 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memchr(const void *s, int c, size_t n)
-{
-	unsigned char	*src;
-
-	src = (unsigned char *) s;
-	if (!src)
-		return (0);
-	while (n--)
-		if (*src++ == c)
-		{
-			return (src);		
-		}
-	return (0);	
-}
-
+/* strncmp example */
 #include <stdio.h>
 #include <string.h>
 
-int main () {
-   const char str[] = "http://www.tutorialspoint.com";
-   const char ch = ':';
-   char *ret;
-
-   ret = ft_memchr(str, ch, strlen(str));
-
-   printf("String after |%c| is - |%s|\n", ch, ret);
-
-   return(0);
+int	ft_strncmp(const char *str1, const char *str2, size_t num)
+{
+	while (num-- && *str1++ && *str2++)
+	{
+		if (*str1 > *str2)
+			return (1);
+		else if (*str1 < *str2)
+			return (-1);
+	}
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 18:12:22 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/08 12:59:33 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/09 09:52:33 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ size_t	ft_strlen(const char *s)
 	if (!p)
 		return (0);
 	while (*p)
-		*p++;
+		p++;
 	return (p - s);
 }

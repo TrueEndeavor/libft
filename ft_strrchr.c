@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/03 18:12:03 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/09 11:00:08 by lannur-s         ###   ########.fr       */
+/*   Created: 2023/05/09 12:06:33 by lannur-s          #+#    #+#             */
+/*   Updated: 2023/05/09 15:45:12 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
+#include <string.h>
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strrchr(const char *str, int c)
 {
-	unsigned char	*ss1;
-	const unsigned char	*ss2;
+	size_t		len;
+	const char	*str_end;
 	
-	ss1 = (unsigned char*)s1;
-	ss2 = (unsigned char*)s2;
-	while (n-- && *ss1++ && *ss2++)
+	if (!str)
+		return (0);
+	len = strlen(str);
+	str_end = str + len - 1;
+	while (*str_end != '\0')
 	{
-		if (*ss1 > *ss2)
-			return (1);
-		else if (*ss1 < *ss2)
-			return (-1);
+		if (*str_end == c)
+		{
+			return ((char*)str_end);
+		}
+		str_end--;
 	}
 	return (0);
 }
