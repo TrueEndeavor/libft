@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 18:12:13 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/09 16:15:45 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/10 10:38:51 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		{
 			d[n] = tmp[n];
 		}
+		free (tmp);
 	}
 	return (dest);
 }
