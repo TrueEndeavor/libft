@@ -6,7 +6,7 @@
 #    By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 12:46:34 by lannur-s          #+#    #+#              #
-#    Updated: 2023/05/10 12:59:52 by lannur-s         ###   ########.fr        #
+#    Updated: 2023/05/10 16:47:45 by lannur-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,13 +23,19 @@ SRCS = ft_isascii.c ft_isprint.c ft_isalpha.c ft_isdigit.c \
 	   ft_strlcpy.c ft_strlcat.c ft_atoi.c ft_calloc.c \
 	   ft_strdup.c ft_substr.c ft_strjoin.c \
 	   ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
-	   ft_putnbr_fd.c
+	   ft_putnbr_fd.c ft_strmapi.c ft_striteri.c
+
+#		ft_strtrim.c ft_strsplit.c ft_itoa.c	   
+BONUS = ft_lstnew.c
+	   
 OBJS = $(SRCS:%.c=%.o)
+
+BONUSOBJS = $(BONUS:%.c=%.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
+$(NAME): $(OBJS) $(BONUSOBJS)
+	$(AR) $(ARFLAGS) $(NAME) $(OBJS) $(BONUSOBJS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -37,6 +43,9 @@ $(NAME): $(OBJS)
 clean:
 	rm -f $(OBJS)
 
+bonus:
+	rm -f $(BONUSOBJS)
+	
 fclean:
 	rm -f $(NAME)
 
