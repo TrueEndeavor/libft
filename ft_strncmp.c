@@ -16,7 +16,8 @@
 
 int	ft_strncmp(const char *str1, const char *str2, size_t num)
 {
-	while (num--)
+	return (ft_memcmp(str1, str2, num));
+/*	while (num--)
 	{
 		if (*str1 != *str2)
 			return (*str1 - *str2);
@@ -24,4 +25,5 @@ int	ft_strncmp(const char *str1, const char *str2, size_t num)
 		str2++;
 	}
 	return (0);
+*/
 }
