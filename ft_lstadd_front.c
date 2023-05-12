@@ -6,11 +6,13 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 16:50:29 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/10 17:07:01 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/12 18:20:16 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	new->next = lst[first ones address]
+
 }

@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:29:24 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/10 10:37:17 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/12 18:19:01 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	char		*dst_end;
 	size_t		diff;
 
-	len_d = strlen(dst);
-	len_s = strlen(src);
+	len_d = ft_strlen(dst);
+	len_s = ft_strlen(src);
 	dst_end = dst + len_d ;
 	if (!src)
 		return (0);

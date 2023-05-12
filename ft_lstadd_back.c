@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/09 12:23:01 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/12 18:19:33 by lannur-s         ###   ########.fr       */
+/*   Created: 2023/05/12 18:06:26 by lannur-s          #+#    #+#             */
+/*   Updated: 2023/05/12 18:17:02 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char	*little, size_t len)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	size_t		little_len;
 
-	if (!*little)
-		return ((char *)big);
-	little_len = ft_strlen(little);
-	while (*big && len >= little_len)
-	{
-		if (ft_strncmp(big, little, little_len) == 0)
-			return ((char *)big);
-		++big;
-		--len;
-	}
-	return (0);
 }
