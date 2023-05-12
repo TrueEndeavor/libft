@@ -6,9 +6,11 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 11:11:15 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/09 16:09:25 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/12 15:15:28 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 static int	ft_isupper(int c)
 {

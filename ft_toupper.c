@@ -6,9 +6,11 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 11:13:54 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/09 16:09:16 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/12 15:15:13 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 static int	ft_islower(int c)
 {
