@@ -6,69 +6,79 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 17:56:21 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/12 18:13:58 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/14 17:09:28 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int ft_split_count(char *s, char c)
+int	word_count(char const *s, char c)
 {
-  int   count;
-  
-  count = 0;
-  while (s != NULL) {
-    count++;
-    s = strchr(s + 1, c);
-  }
-  return (count + 1);
+	int	word;
+
+	word = 0;
+	if (!s)
+		return (0);
+	while (*s)
+	{
+		if (*s != c)
+		{
+			word++;
+			while (*s && *s != c)
+				s++;
+		}
+		else
+			s++;
+	}
+	return (word);
 }
 
-void	*free_mem(char **res, int i)
+void	*free_mem(char **new, int i)
 {
 	while (i--)
 	{
-		if (res[i])
-			free(res[i]);
+		if (new[i])
+			free(new[i]);
 	}
-	free(res);
+	free(new);
 	return (NULL);
+}
+
+int	word_len(char const *s, char c)
+{
+	int	len;
+
+	len = 0;
+	while (s[len] && s[len] != c)
+		len++;
+	return (len);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char *s_start;
-    char *s_move;
-    char **rs;
-    int count;
-    int i;
-    int slen;
+	char	**new;
+	int		i;
+	int		w_len;
 
-    count = 0;
-    i = 0;
-    slen = 0;
-
-	s_start = (char *) s;
-    s_move = (char *) s;
-    count = ft_split_count(s_start, c);
-    rs = (char **)calloc(count, sizeof(char *));
-
-
-    while (*s_move)
-    {
-      while (*s_move != c && *s_move != '\0')
-      {
-        slen++;
-        s_move++;
-      }
-      rs[i] = (char *)calloc(slen + 1, sizeof(char));
-	  if (rs[i] == NULL)
-	  	free_mem(rs, i);
-      strncpy(rs[i], s_start, slen);
-      s_start = s_move + 1;
-      slen = 0;
-      i++;
-      s_move++;
-    }
-	return (rs);
+	new = ft_calloc(word_count(s, c) + 1, sizeof(char *));
+	if (!new)
+		return (NULL);
+	i = 0;
+	while (*s)
+	{
+		while (*s == c)
+			++s;
+		if (*s)
+		{
+			w_len = word_len(s, c);
+			new[i] = ft_calloc(w_len + 1, sizeof(char));
+			if (!new[i])
+				return (free_mem(new, i));
+			ft_strlcpy(new[i], s, w_len + 1);
+			s += w_len;
+			i++;
+		}
+	}
+	new[i] = 0;
+	return (new);
 }

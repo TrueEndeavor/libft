@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 11:01:49 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/12 17:58:44 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/14 15:47:57 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	slen = ft_strlen(s);
 	if (start >= slen)
-		return (NULL);
-	if (len == 0)
-		return (NULL);
+		start = slen;
 	if (len > slen - start)
 		len = slen - start;
 	src = s + start;
