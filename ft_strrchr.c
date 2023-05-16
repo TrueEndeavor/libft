@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 12:06:33 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/12 15:18:45 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/16 15:31:42 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strrchr(const char *str, int c)
 	size_t		len;
 	const char	*str_end;
 
-	if (!str)
-		return (0);
 	len = ft_strlen(str);
 	if ((unsigned char)c == '\0')
 	{

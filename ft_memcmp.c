@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 18:12:03 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/16 13:06:27 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/16 15:52:22 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char		*ss1;
+	const unsigned char	*ss1;
 	const unsigned char	*ss2;
 
-	ss1 = (unsigned char *)s1;
-	ss2 = (unsigned char *)s2;
+	ss1 = s1;
+	ss2 = s2;
 	if (n == 0)
 		return (0);
 	while (n--)

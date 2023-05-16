@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 17:56:21 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/14 17:09:28 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/16 17:15:17 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ char	**ft_split(char const *s, char c)
 	int		i;
 	int		w_len;
 
+	if (!s)
+		return (NULL);
 	new = ft_calloc(word_count(s, c) + 1, sizeof(char *));
 	if (!new)
 		return (NULL);

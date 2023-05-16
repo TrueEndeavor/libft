@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 12:22:17 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/09 17:02:37 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/16 15:24:42 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,13 @@
 char	*ft_strdup(const char *string)
 {
 	char	*dst;
-	char	*dst_move;
+	int		len;
 
-	dst = (char *)malloc(ft_strlen(string) + 1 * sizeof(char));
+	len = ft_strlen(string);
+	dst = (char *)malloc(len + 1 * sizeof(char));
 	if (!dst)
 		return (0);
-	dst_move = dst;
-	while (*string != '\0')
-	{
-		*dst_move++ = *string++;
-	}
-	*dst_move = '\0';
+	ft_memcpy(dst, string, len);
+	dst[len] = '\0';
 	return (dst);
 }

@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 12:38:35 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/10 12:58:05 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/16 17:11:36 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,11 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	while (*s != '\0')
+	if (s)
 	{
-		ft_putchar_fd(*s++, fd);
+		while (*s != '\0')
+		{
+			ft_putchar_fd(*s++, fd);
+		}
 	}
 }
