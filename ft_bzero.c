@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 18:11:49 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/14 14:48:16 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/15 16:00:47 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*src;
+	char	*xs;
 
-	src = (unsigned char *) s;
-	ft_memset(src, 0, n);
+	xs = (char *)s;
+	ft_memset(xs, 0, n);
 }
