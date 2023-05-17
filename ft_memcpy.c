@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 18:12:07 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/16 13:08:48 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/17 16:07:58 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,11 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char		*xd;
 	const unsigned char	*xs;	
 
+	if (dest == src)
+		return (dest);
 	xd = dest;
 	xs = src;
 	while (n--)
-	{
-		if (!(xs == dest || xd == src))
-			*(unsigned char *)xd++ = *(unsigned char *)xs++;
-		else
-			return (dest);
-	}
+		*xd++ = *xs++;
 	return (dest);
 }

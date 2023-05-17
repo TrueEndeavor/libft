@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 18:06:36 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/12 18:17:26 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/17 13:12:43 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,9 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-
+	if (lst && del)
+	{
+		del(lst->content);
+		free(lst);
+	}
 }

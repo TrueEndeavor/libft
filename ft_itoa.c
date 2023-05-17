@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 17:55:37 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/14 14:52:21 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/17 15:26:29 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*ft_itoa(int n)
 		sign = 1;
 		n = -n;
 	}
-	new = ft_calloc(n_len + 1, sizeof(char));
+	new = malloc(n_len + 1 * sizeof(char));
 	if (!new)
 		return (NULL);
 	new[n_len] = 0;

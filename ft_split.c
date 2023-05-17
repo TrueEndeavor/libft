@@ -6,13 +6,13 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 17:56:21 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/16 17:15:17 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/17 15:24:47 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	word_count(char const *s, char c)
+static int	word_count(char const *s, char c)
 {
 	int	word;
 
@@ -33,7 +33,7 @@ int	word_count(char const *s, char c)
 	return (word);
 }
 
-void	*free_mem(char **new, int i)
+static void	*free_mem(char **new, int i)
 {
 	while (i--)
 	{
@@ -44,7 +44,7 @@ void	*free_mem(char **new, int i)
 	return (NULL);
 }
 
-int	word_len(char const *s, char c)
+static int	word_len(char const *s, char c)
 {
 	int	len;
 
@@ -62,7 +62,7 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	new = ft_calloc(word_count(s, c) + 1, sizeof(char *));
+	new = malloc(word_count(s, c) + 1 * sizeof(char *));
 	if (!new)
 		return (NULL);
 	i = 0;
@@ -73,7 +73,7 @@ char	**ft_split(char const *s, char c)
 		if (*s)
 		{
 			w_len = word_len(s, c);
-			new[i] = ft_calloc(w_len + 1, sizeof(char));
+			new[i] = malloc(w_len + 1 * sizeof(char));
 			if (!new[i])
 				return (free_mem(new, i));
 			ft_strlcpy(new[i], s, w_len + 1);

@@ -6,13 +6,19 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 18:06:43 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/12 18:17:39 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/17 11:47:08 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+t_list *ft_lstlast(t_list *lst)
 {
-
+	t_list	*begin;
+	
+	begin = lst;
+	if (lst)
+		while (lst->next)
+			lst = lst->next;
+	return (lst);
 }

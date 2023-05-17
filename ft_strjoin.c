@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 11:01:57 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/16 17:13:26 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/17 15:22:03 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
 	total = s1_len + s2_len;
-	dst = (char *)malloc(total + 1 * sizeof(char));
+	dst = malloc(total + 1 * sizeof(char));
 	if (dst == NULL)
 		return (NULL);
 	ft_memcpy(dst, s1, s1_len + 1);

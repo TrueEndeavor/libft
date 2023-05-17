@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 11:01:49 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/14 15:47:57 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/17 15:21:36 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (len > slen - start)
 		len = slen - start;
 	src = s + start;
-	dst = (char *)malloc(len + 1 * sizeof(char));
+	dst = malloc(len + 1 * sizeof(char));
 	if (dst == NULL)
 		return (NULL);
 	ft_memcpy(dst, src, len);
