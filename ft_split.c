@@ -5,33 +5,47 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/12 17:56:21 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/17 15:24:47 by lannur-s         ###   ########.fr       */
+/*   Created: 2023/05/18 11:03:45 by lannur-s          #+#    #+#             */
+/*   Updated: 2023/05/18 11:52:42 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	word_count(char const *s, char c)
+static int	substr_count(char const *s, char c)
 {
-	int	word;
+	int	count;
 
-	word = 0;
+	count = 0;
 	if (!s)
 		return (0);
 	while (*s)
 	{
-		if (*s != c)
+		if (strchr(&c,*s) == NULL)
 		{
-			word++;
-			while (*s && *s != c)
+			count++;
+			while (*s && strchr(&c, *s) == NULL)
 				s++;
 		}
 		else
 			s++;
 	}
-	return (word);
+	return (count);
 }
+
+static int	substr_len(char const *s, char c)
+{
+	const char	*end;
+	int			len;
+
+	end = strchr(s, c);
+	len = 0;
+	if (end)
+		len = end - s;
+	else
+		len = strlen(s);
+	return (len);
+}	
 
 static void	*free_mem(char **new, int i)
 {
@@ -44,43 +58,45 @@ static void	*free_mem(char **new, int i)
 	return (NULL);
 }
 
-static int	word_len(char const *s, char c)
+static int	split(char **new, char const *s, char c)
 {
-	int	len;
+	int	i;
+	int	subs_len;
 
-	len = 0;
-	while (s[len] && s[len] != c)
-		len++;
-	return (len);
-}
-
-char	**ft_split(char const *s, char c)
-{
-	char	**new;
-	int		i;
-	int		w_len;
-
-	if (!s)
-		return (NULL);
-	new = malloc(word_count(s, c) + 1 * sizeof(char *));
-	if (!new)
-		return (NULL);
 	i = 0;
+	subs_len = 0;
 	while (*s)
 	{
 		while (*s == c)
 			++s;
 		if (*s)
 		{
-			w_len = word_len(s, c);
-			new[i] = malloc(w_len + 1 * sizeof(char));
+			subs_len = substr_len(s, c);
+			new[i] = malloc(subs_len + 1 * sizeof(char));
 			if (!new[i])
-				return (free_mem(new, i));
-			ft_strlcpy(new[i], s, w_len + 1);
-			s += w_len;
+			{
+				free_mem(new, i);
+				return (0);
+			}
+			ft_strlcpy(new[i], s, subs_len + 1);
+			s += subs_len;
 			i++;
 		}
 	}
-	new[i] = 0;
+	new[i] = NULL;
+	return (1);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**new;
+
+	if (!s)
+		return (NULL);
+	new = ft_calloc(substr_count(s, c) + 1, sizeof(char *));
+	if (!new)
+		return (NULL);
+	if (!split(new, s, c))
+		return (NULL);
 	return (new);
 }

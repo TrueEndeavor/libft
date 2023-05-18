@@ -6,7 +6,7 @@
 #    By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 12:46:34 by lannur-s          #+#    #+#              #
-#    Updated: 2023/05/17 18:12:54 by lannur-s         ###   ########.fr        #
+#    Updated: 2023/05/18 17:19:12 by lannur-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,6 @@ SRCS = ft_isascii.c ft_isprint.c ft_isalpha.c ft_isdigit.c \
 BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 		ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
 		ft_lstclear.c ft_lstiter.c ft_lstmap.c
-# ft_lstmap.c
 
 OBJS = $(SRCS:%.c=%.o)
 
@@ -51,7 +50,7 @@ so:
 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(BONUS) 
 	gcc -nostartfiles -shared -o libft.so $(OBJS) $(BONUSOBJS)
 
-fclean-bonus:
+clean-bonus:
 	rm -f $(BONUSOBJS)
 	
 fclean: clean
