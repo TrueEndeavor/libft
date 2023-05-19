@@ -6,20 +6,19 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 11:07:31 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/16 15:31:20 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/19 07:55:56 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-char	*ft_strchr(const char *str, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	while (*str && *str != (char)c)
-		str++;
-	if (*str == (char)c)
+	while (*s && *s != (char)c)
+		s++;
+	if (*s == (char)c)
 	{
-		return ((char *) str);
+		return ((char *) s);
 	}
 	return (NULL);
 }

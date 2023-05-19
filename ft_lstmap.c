@@ -6,17 +6,17 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 18:06:46 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/18 17:17:44 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/19 11:48:17 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	free_mem(t_list *t, void(*del)(void *))
+static void	free_mem(t_list	*tmp, void (*del)(void *))
 {
-	if (!t)
+	if (!tmp)
 	{
-		ft_lstclear(&t, del);
+		ft_lstclear(&tmp, del);
 	}
 }
 

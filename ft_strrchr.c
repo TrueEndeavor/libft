@@ -6,32 +6,32 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 12:06:33 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/16 15:31:42 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/19 07:56:29 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *str, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	size_t		len;
-	const char	*str_end;
+	const char	*s_end;
 
-	len = ft_strlen(str);
+	len = ft_strlen(s);
 	if ((unsigned char)c == '\0')
 	{
-		return ((char *)str + len);
+		return ((char *)s + len);
 	}	
-	str_end = str + len - 1;
-	while (str_end >= str)
+	s_end = s + len - 1;
+	while (s_end >= s)
 	{
-		if (*str_end == (unsigned char)c)
-			return ((char *)str_end);
-		str_end--;
+		if (*s_end == (unsigned char)c)
+			return ((char *)s_end);
+		s_end--;
 	}
-	if (str_end < str)
+	if (s_end < s)
 	{
 		return (NULL);
 	}	
-	return ((char *)str_end);
+	return ((char *)s_end);
 }

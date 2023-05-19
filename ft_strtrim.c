@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 13:18:11 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/17 15:24:27 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/19 11:30:37 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	start;
 	size_t	end;
 	size_t	len;
-	char	*dest;
 
 	if (!s1)
 		return (NULL);
@@ -28,8 +27,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (end >= start && ft_strrchr(set, s1[end]))
 		end--;
 	len = end - start;
-	dest = malloc(len + 1 * sizeof(char));
-	if (!dest)
-		return (NULL);
 	return (ft_substr(s1, start, len + 1));
 }

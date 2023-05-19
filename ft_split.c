@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 11:03:45 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/18 11:52:42 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/19 11:11:41 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,38 @@
 
 static int	substr_count(char const *s, char c)
 {
-	int	count;
+	size_t	count;
+	int		char_match;
 
 	count = 0;
-	if (!s)
-		return (0);
+	char_match = 0;
 	while (*s)
 	{
-		if (strchr(&c,*s) == NULL)
-		{
-			count++;
-			while (*s && strchr(&c, *s) == NULL)
-				s++;
-		}
+		if (*s == c)
+			char_match = 0;
 		else
-			s++;
+		{
+			if (!char_match)
+			{
+				char_match = 1;
+				count++;
+			}
+		}
+		s++;
 	}
 	return (count);
 }
 
 static int	substr_len(char const *s, char c)
 {
-	const char	*end;
 	int			len;
 
-	end = strchr(s, c);
 	len = 0;
-	if (end)
-		len = end - s;
-	else
-		len = strlen(s);
+	while (*s && *s != c)
+	{
+		len++;
+		s++;
+	}
 	return (len);
 }	
 
@@ -72,14 +74,14 @@ static int	split(char **new, char const *s, char c)
 		if (*s)
 		{
 			subs_len = substr_len(s, c);
-			new[i] = malloc(subs_len + 1 * sizeof(char));
+			new[i] = ft_calloc((subs_len + 1), sizeof(char));
 			if (!new[i])
 			{
 				free_mem(new, i);
 				return (0);
 			}
 			ft_strlcpy(new[i], s, subs_len + 1);
-			s += subs_len;
+			s = s + subs_len;
 			i++;
 		}
 	}
@@ -93,7 +95,7 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	new = ft_calloc(substr_count(s, c) + 1, sizeof(char *));
+	new = ft_calloc((substr_count(s, c) + 1), sizeof(char *));
 	if (!new)
 		return (NULL);
 	if (!split(new, s, c))
