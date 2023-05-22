@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 14:54:17 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/19 09:24:53 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/22 10:01:57 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t	total;
 
 	total = nmemb * size;
+	if (nmemb == 0 || size == 0)
+		return (malloc(0));
 	if (size != 0 && total / size != nmemb)
 		return (NULL);
 	new = (void *) malloc(total);

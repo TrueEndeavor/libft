@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 12:23:01 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/19 12:06:50 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/19 12:11:29 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ char	*ft_strnstr(const char *big, const char	*little, size_t len)
 {
 	size_t		little_len;
 
-    if (*little == '\0')
-        return ((char *)big);
-    else if (len == 0 || *big == '\0')
-        return (NULL);
+	if (*little == '\0')
+		return ((char *)big);
+	else if (len == 0 || *big == '\0')
+		return (NULL);
 	else if (len == 0)
 		return (NULL);
 	little_len = ft_strlen(little);
