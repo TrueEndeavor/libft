@@ -6,7 +6,7 @@
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 18:06:54 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/19 11:40:17 by lannur-s         ###   ########.fr       */
+/*   Updated: 2023/05/22 12:42:46 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,8 @@
 int	ft_lstsize(t_list *lst)
 {
 	int		count;
-	t_list	*begin;
 
 	count = 0;
-	begin = lst;
 	if (lst)
 	{
 		count++;
