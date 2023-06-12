@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lannur-s <lannur-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/10 13:00:37 by lannur-s          #+#    #+#             */
-/*   Updated: 2023/05/10 13:15:49 by lannur-s         ###   ########.fr       */
+/*   Created: 2023/05/02 11:04:30 by lannur-s          #+#    #+#             */
+/*   Updated: 2023/05/12 15:14:12 by lannur-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+static int	ft_isupper(int c)
 {
-	long	nbr;
+	return ((c >= 'A' && c <= 'Z') || 0);
+}
 
-	nbr = n;
-	if (nbr < 0)
-	{
-		ft_putchar_fd('-', fd);
-		nbr = -nbr;
-	}
-	if (nbr > 9)
-		ft_putnbr_fd(nbr / 10, fd);
-	ft_putchar_fd(nbr % 10 + '0', fd);
+static int	ft_islower(int c)
+{
+	return ((c >= 'a' && c <= 'z') || 0);
+}
+
+int	ft_isalpha(int c)
+{
+	return ((ft_isupper(c) || ft_islower(c)) || 0);
 }
